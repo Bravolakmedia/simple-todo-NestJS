@@ -10,7 +10,9 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 @Controller('todo')
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}
-
+  
+  
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @ApiOperation({description: 'To Add a new task with relation to the user email.', summary: 'Add a new task.'})
   @Post()
