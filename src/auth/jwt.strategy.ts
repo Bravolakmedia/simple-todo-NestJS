@@ -17,7 +17,7 @@ constructor(
 })
 }
 async validate(payload: { email: string }){
-    const user = await this.databaseService.user.findUnique({
+    const user = await this.databaseService.user.findFirst({
       where: {
         email: payload.email,
       },
